@@ -37,8 +37,6 @@ public class PlayerInteractionController : MonoBehaviour
             {
                 targetInteractable.Interact();
             }
-        }
-        
-        
+        } 
     }
 }

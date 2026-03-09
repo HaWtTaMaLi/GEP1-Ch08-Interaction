@@ -16,5 +16,4 @@ public class UIManager : MonoBehaviour
         currentMessage = message;
         messageText.text = currentMessage;
     }
-
 }
