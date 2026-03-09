@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInteractionController : MonoBehaviour
 {
-    public bool debugEnabled = false;
+    [SerializeField] bool debugEnabled = false;
 
     private IInteractable targetInteractable;
 
@@ -24,5 +25,20 @@ public class PlayerInteractionController : MonoBehaviour
             targetInteractable = null;
             debugCurrentInteractable = null;
         }
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (debugEnabled) Debug.Log("Interacted with");
+
+            if (targetInteractable != null)
+            {
+                targetInteractable.Interact();
+            }
+        }
+        
+        
     }
 }
