@@ -14,7 +14,7 @@ public class Interactable_PickUp : MonoBehaviour, IInteractable
     }
     public void Focused()
     {
-
+        //change color or highlight
     }
 
     public void UnFocused()

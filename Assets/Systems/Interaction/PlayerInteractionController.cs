@@ -9,12 +9,22 @@ public class PlayerInteractionController : MonoBehaviour
 
     [SerializeField] private GameObject debugCurrentInteractable;
 
+    private UIManager UIManager;
+
+
+    private void Start()
+    {
+        UIManager = ServiceHub.Instance.UIManager;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.TryGetComponent(out IInteractable foundInteractable))
         {
             targetInteractable = foundInteractable;
             debugCurrentInteractable = other.gameObject;
+
+            UIManager.ShowPrompt();
         }
     }
 
@@ -24,6 +34,8 @@ public class PlayerInteractionController : MonoBehaviour
         {
             targetInteractable = null;
             debugCurrentInteractable = null;
+
+            UIManager.HidePrompt();
         }
     }
 

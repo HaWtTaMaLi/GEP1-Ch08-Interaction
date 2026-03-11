@@ -17,14 +17,15 @@ public class Interactable_Message : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (debugEnabled) Debug.Log("Tester");
+        if (debugEnabled) Debug.Log("Interacted with Interactable_Message");
         uiManager.DisplayMessage(message);
      
     }
 
     public void Focused()
     {
-
+        //change colour
+        //if inside interactable do something
     }
 
     public void UnFocused()
