@@ -24,7 +24,7 @@ public class Interactable_Message : MonoBehaviour, IInteractable
 
     public void Focused()
     {
-        //change colour
+        //change color or highlight
         //if inside interactable do something
     }
 
