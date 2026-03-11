@@ -17,8 +17,9 @@ public class Interactable_Message : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (debugEnabled) Debug.Log("Tester");
         uiManager.DisplayMessage(message);
-        Debug.Log("Tester");
+     
     }
 
     public void Focused()

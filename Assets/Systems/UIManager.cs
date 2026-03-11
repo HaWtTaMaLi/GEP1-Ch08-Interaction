@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,6 +15,16 @@ public class UIManager : MonoBehaviour
     {
         //passes message through the ui manager to the display
         currentMessage = message;
+        StartCoroutine(FadeOutInfoText());
+
+    }
+
+    private IEnumerator FadeOutInfoText()
+    {
         messageText.text = currentMessage;
+
+        yield return new WaitForSeconds(3f);
+
+        messageText.text = "'Text vanishes'";
     }
 }

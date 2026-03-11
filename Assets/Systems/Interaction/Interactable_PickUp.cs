@@ -10,7 +10,6 @@ public class Interactable_PickUp : MonoBehaviour, IInteractable
         if (debugEnabled) Debug.Log("Interacted with" + gameObject.name);
 
         //add logic to add items to inventory
-
         Destroy(gameObject);
     }
     public void Focused()
